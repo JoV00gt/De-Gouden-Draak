@@ -15,7 +15,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans text-gray-900 antialiased">
-        <div class="flex border-b-blue-600 border-b-4 p-2">
+        <div class="flex border-b-blue-600 border-b-[3px] p-2">
             <img class="h-28" src="{{url('images/goodpay.png')}}"/>
         </div>
         <div class="min-h-screen flex flex-col justify-start items-center pt-16 bg-gray-100 dark:bg-gray-900">
