@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dish extends Model
+class DishType extends Model
 {
     use HasFactory;
 
-    public $table = 'menu'; 
+    public $table = 'dishes';
 
     protected $guarded = [];
 
-    public $timestamps = true;
+    public $timestamps = false;
 }

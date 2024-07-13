@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(DishesSeeder::class);
+        $this->call(DishTypeSeeder::class);
+        $this->call(DishSeeder::class);
         User::factory()->create([
             'name' => 'Jos Voogt',
             'email' => 'josvoogt@goudendraak.nl',
