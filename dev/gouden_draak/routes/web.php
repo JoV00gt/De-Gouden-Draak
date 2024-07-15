@@ -26,4 +26,8 @@ Route::get('/menu', function() {
     return view('menu');
 })->middleware(['auth', 'verified'])->name('menu');
 
+Route::get('/order', function() {
+    return view('order');
+})->middleware(['auth', 'verified'])->name('order');
+
 require __DIR__.'/auth.php';

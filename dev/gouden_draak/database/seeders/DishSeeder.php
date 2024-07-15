@@ -8,56 +8,54 @@ use App\Models\Dish;
 
 class DishSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
-        Dish::create(['name' => 'Soep Ling Fa', 'description' => null, 'price' => 3.800, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Kippensoep', 'description' => null, 'price' => 2.900, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Tomatensoep', 'description' => null, 'price' => 2.900, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Haaienvinnensoep', 'description' => null, 'price' => 3.100, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Champignonsoep', 'description' => null, 'price' => 3.300, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Pekingsoep', 'description' => null, 'price' => 3.800, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Wan Tan Soep', 'description' => null, 'price' => 4.300, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Chinese Champignonsoep', 'description' => null, 'price' => 4.100, 'dish' => 'Soep']);
-        Dish::create(['name' => 'Loempia Ling Fa', 'description' => 'met atjar, ananas en pindasaus', 'price' => 6.200, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Loempia Compleet', 'description' => 'met gesmoord rundvlees en pikante saus', 'price' => 6.200, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Loempia met Kip', 'description' => null, 'price' => 3.900, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Loempia', 'description' => null, 'price' => 3.800, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Chinese mini loempia', 'description' => '4 st.', 'price' => 4.900, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Vegetarische mini loempia', 'description' => '12 st.', 'price' => 4.900, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Kroepoek', 'description' => null, 'price' => 2.500, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Casave Kroepoek', 'description' => null, 'price' => 2.700, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Pangsit Goreng', 'description' => '7 st.', 'price' => 3.900, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Soep Ling Fa', 'description' => null, 'price' => 3.80, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Kippensoep', 'description' => null, 'price' => 2.90, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Tomatensoep', 'description' => null, 'price' => 2.90, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Haaienvinnensoep', 'description' => null, 'price' => 3.10, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Champignonsoep', 'description' => null, 'price' => 3.30, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Pekingsoep', 'description' => null, 'price' => 3.80, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Wan Tan Soep', 'description' => null, 'price' => 4.30, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Chinese Champignonsoep', 'description' => null, 'price' => 4.10, 'dish' => 'Soep']);
+        Dish::create(['name' => 'Loempia Ling Fa', 'description' => 'met atjar, ananas en pindasaus', 'price' => 6.20, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Loempia Compleet', 'description' => 'met gesmoord rundvlees en pikante saus', 'price' => 6.20, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Loempia met Kip', 'description' => null, 'price' => 3.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Loempia', 'description' => null, 'price' => 3.80, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Chinese mini loempia', 'description' => '4 st.', 'price' => 4.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Vegetarische mini loempia', 'description' => '12 st.', 'price' => 4.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Kroepoek', 'description' => null, 'price' => 2.50, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Casave Kroepoek', 'description' => null, 'price' => 2.70, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Pangsit Goreng', 'description' => '7 st.', 'price' => 3.90, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Pisang Goreng', 'description' => '5 st.', 'price' => 3.40, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Chinese Dim Sum', 'description' => 'mini loempia, kerry ko, pangsit goreng, garnalenpasteitje', 'price' => 5.40, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Sat&eacute; Babi', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Sat&eacute; Ajam', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Sat&eacute; Garnalen', 'description' => '3 st.', 'price' => 9.900, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Fong Mei Ha', 'description' => 'krokant gepaneerd garnalen. 4 st.', 'price' => 8.100, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Patat', 'description' => null, 'price' => 2.300, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Tsa Siu Mai', 'description' => 'gebakken vleespasteitje. 4 st.', 'price' => 3.500, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Sat&eacute; Garnalen', 'description' => '3 st.', 'price' => 9.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Fong Mei Ha', 'description' => 'krokant gepaneerd garnalen. 4 st.', 'price' => 8.10, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Patat', 'description' => null, 'price' => 2.30, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Tsa Siu Mai', 'description' => 'gebakken vleespasteitje. 4 st.', 'price' => 3.50, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Atjar', 'description' => null, 'price' => 3.00, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Witte Rijst', 'description' => null, 'price' => 3.00, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Grote pindasaus', 'description' => null, 'price' => 3.900, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Kleine pindasaus', 'description' => null, 'price' => 2.300, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Kippenpootje', 'description' => null, 'price' => 2.300, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Grote pindasaus', 'description' => null, 'price' => 3.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Kleine pindasaus', 'description' => null, 'price' => 2.30, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Kippenpootje', 'description' => null, 'price' => 2.30, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Halve kip', 'description' => null, 'price' => 6.00, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Kroket', 'description' => null, 'price' => 1.40, 'dish' => 'Voorgerecht']);
         Dish::create(['name' => 'Frikandel', 'description' => null, 'price' => 1.40, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Kleine Sambal', 'description' => null, 'price' => 2.500, 'dish' => 'Voorgerecht']);
-        Dish::create(['name' => 'Bami of Nasi Goreng Ling Fa', 'description' => 'Foe Yong Hai, Babi Pangang, sat&eacute; en kippenpootje', 'price' => 14.300, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Kleine Sambal', 'description' => null, 'price' => 2.50, 'dish' => 'Voorgerecht']);
+        Dish::create(['name' => 'Bami of Nasi Goreng Ling Fa', 'description' => 'Foe Yong Hai, Babi Pangang, sat&eacute; en kippenpootje', 'price' => 14.30, 'dish' => 'Bami en Nasi Gerechten']);
         Dish::create(['name' => 'Bami of Nasi Goreng met ei', 'description' => null, 'price' => 5.00, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi Goreng speciaal', 'description' => null, 'price' => 8.500, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi Goreng met sat&eacute;', 'description' => '3 st.', 'price' => 8.500, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Nasi Yeung Chow', 'description' => null, 'price' => 10.900, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi Goreng speciaal', 'description' => null, 'price' => 8.50, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi Goreng met sat&eacute;', 'description' => '3 st.', 'price' => 8.50, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Nasi Yeung Chow', 'description' => null, 'price' => 10.90, 'dish' => 'Bami en Nasi Gerechten']);
         Dish::create(['name' => 'Nasi Yeung Chow', 'description' => 'met garnaaltjes en Cha Sieuw-vlees', 'price' => 13.00, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi Malay', 'description' => null, 'price' => 9.300, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi met kipfilet', 'description' => null, 'price' => 9.300, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi met varkensvlees', 'description' => null, 'price' => 9.300, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi met garnalen', 'description' => null, 'price' => 14.300, 'dish' => 'Bami en Nasi Gerechten']);
-        Dish::create(['name' => 'Bami of Nasi met ossenhaas', 'description' => null, 'price' => 15.300, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi Malay', 'description' => null, 'price' => 9.30, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi met kipfilet', 'description' => null, 'price' => 9.30, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi met varkensvlees', 'description' => null, 'price' => 9.30, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi met garnalen', 'description' => null, 'price' => 14.30, 'dish' => 'Bami en Nasi Gerechten']);
+        Dish::create(['name' => 'Bami of Nasi met ossenhaas', 'description' => null, 'price' => 15.30, 'dish' => 'Bami en Nasi Gerechten']);
         Dish::create(['name' => 'Babi Pangang, Foe Yong Hani en saté', 'description' => null, 'price' => 15.80, 'dish' => 'Combinatie Gerechten (met witte rijst)']);
         Dish::create(['name' => 'Babi Pangang, Tjap Tjoy en saté', 'description' => null, 'price' => 15.80, 'dish' => 'Combinatie Gerechten (met witte rijst)']);
         Dish::create(['name' => 'Babi Pangang, Koe Loe Yuk en saté', 'description' => null, 'price' => 15.80, 'dish' => 'Combinatie Gerechten (met witte rijst)']);
@@ -67,7 +65,7 @@ class DishSeeder extends Seeder
         Dish::create(['name' => 'Foe Yong Hai, Tjap Tjoy en saté', 'description' => null, 'price' => 15.80, 'dish' => 'Combinatie Gerechten (met witte rijst)']);
         Dish::create(['name' => 'Foe Yong Hai, Kip Kerrie en Saté', 'description' => null, 'price' => 16.50, 'dish' => 'Combinatie Gerechten (met witte rijst)']);
         Dish::create(['name' => 'Mihoen Ling Fa', 'description' => 'Foe Yong Hai, Babi Pangang, saté en kippenpootje', 'price' => 16.4, 'dish' => 'Mihoen Gerechten']);
-        Dish::create(['name' => 'Mihoen met varkensvlees', 'description' => null, 'price' => 9.300, 'dish' => 'Mihoen Gerechten']);
+        Dish::create(['name' => 'Mihoen met varkensvlees', 'description' => null, 'price' => 9.30, 'dish' => 'Mihoen Gerechten']);
         Dish::create(['name' => 'Mihoen met kipfilet', 'description' => null, 'price' => 10.40, 'dish' => 'Mihoen Gerechten']);
         Dish::create(['name' => 'Mihoen met ossenhaas', 'description' => null, 'price' => 16.4, 'dish' => 'Mihoen Gerechten']);
         Dish::create(['name' => 'Mihoen met garnalen', 'description' => null, 'price' => 15.30, 'dish' => 'Mihoen Gerechten']);

@@ -10,6 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="{{ asset('css/component.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/ordering.css') }}" rel="stylesheet"/>
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
@@ -21,7 +22,11 @@
                 <img class="h-20" src="{{url('images/goodpay.png')}}"/>
             </div>
             <div> 
-                <x-checkout-button>{{ __('Kassa') }}</x-checkout-button>
+                <x-checkout-button>
+                    <a href="{{ route('order') }}">
+                        {{ __('Kassa') }}
+                    </a>
+                </x-checkout-button>
                 <x-checkout-button>
                     <a href="{{ route('menu') }}">
                         {{ __('Gerechten') }}
@@ -37,7 +42,7 @@
             </div>
             <div></div>
         </div>
-        <div class="min-h-screen flex flex-col justify-start items-center pt-4">
+        <div class="flex flex-col justify-start items-center pt-4">
             <div class="w-full px-8 py-4 shadow-md overflow-hidden">
                 {{ $slot }}
             </div>
