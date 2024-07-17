@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\OrderingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,8 +26,6 @@ Route::get('/menu', function() {
     return view('menu');
 })->middleware(['auth', 'verified'])->name('menu');
 
-Route::get('/order', function() {
-    return view('order');
-})->middleware(['auth', 'verified'])->name('order');
+Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'verified'])->name('order');
 
 require __DIR__.'/auth.php';
