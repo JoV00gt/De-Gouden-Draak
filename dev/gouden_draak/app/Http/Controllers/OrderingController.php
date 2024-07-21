@@ -14,4 +14,14 @@ class OrderingController extends Controller
 
         return view ('order')->with(compact('items'));
     }
+
+    public function store(Request $request) 
+    {
+        $orderData = $request->input('orderData');
+
+        $validated = $request->validate([
+            'orderData' => 'required|array',
+            'orderData.*.quantity' => 'required|min=1',
+        ]);
+    }
 }

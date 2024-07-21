@@ -27,5 +27,6 @@ Route::get('/menu', function() {
 })->middleware(['auth', 'verified'])->name('menu');
 
 Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'verified'])->name('order');
+Route::post('/order', [OrderController::class, 'store'])->name('orders.store');
 
 require __DIR__.'/auth.php';

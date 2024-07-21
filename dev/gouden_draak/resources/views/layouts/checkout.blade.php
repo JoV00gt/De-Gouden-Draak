@@ -11,10 +11,13 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="{{ asset('css/component.css') }}" rel="stylesheet"/>
         <link href="{{ asset('css/ordering.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/general.css') }}" rel="stylesheet"/>
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+        <script src="{{ asset('js/ordering.js') }}" defer></script>
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex justify-between border-b-blue-600 border-b-[3px] p-2">
@@ -42,7 +45,7 @@
             </div>
             <div></div>
         </div>
-        <div class="flex flex-col justify-start items-center pt-4">
+        <div class="flex flex-col justify-start items-center">
             <div class="w-full px-8 py-4 shadow-md overflow-hidden">
                 {{ $slot }}
             </div>
