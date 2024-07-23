@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Models\Dish;
+use App\Models\Order;
+use App\Models\OrderItem;
+use Carbon\Carbon;
 
 class OrderingController extends Controller
 {
@@ -19,9 +22,23 @@ class OrderingController extends Controller
     {
         $orderData = $request->input('orderData');
 
-        $validated = $request->validate([
+        $request->validate([
             'orderData' => 'required|array',
-            'orderData.*.quantity' => 'required|min=1',
+            'orderData.*.quantity' => 'required|min:1',
         ]);
+
+        $order = Order::create([
+            'date' => Carbon::now(),
+        ]);
+
+        foreach ($orderData as $item) {
+            OrderItem::create([
+                'order_id' => $order->id,
+                'menu_id' => $item['id'],
+                'amount' => $item['quantity'],
+            ]);
+        }
+
+        return redirect()->route('order');
     }
 }

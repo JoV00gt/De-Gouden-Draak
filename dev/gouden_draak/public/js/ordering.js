@@ -26,6 +26,26 @@ document.addEventListener('DOMContentLoaded', () => {
             clearOrder() {
                 this.order = [];
             },
+            async payOrder() {
+                if(this.order.length <= 0) {
+                    return;
+                }
+
+                try {
+                    await axios.post('/order', {
+                        orderData: this.order
+                    }, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        }
+                    });
+                    this.clearOrder();
+                } catch (error) {
+                    console.error('Error placing order:', error);
+                    alert('An error occurred while placing the order.: ' + error);
+                }
+            }
         }
     });
 });

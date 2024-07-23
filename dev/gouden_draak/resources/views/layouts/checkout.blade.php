@@ -12,6 +12,7 @@
         <link href="{{ asset('css/component.css') }}" rel="stylesheet"/>
         <link href="{{ asset('css/ordering.css') }}" rel="stylesheet"/>
         <link href="{{ asset('css/general.css') }}" rel="stylesheet"/>
+        <link href="{{ asset('css/sales.css') }}" rel="stylesheet"/>
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
@@ -35,7 +36,11 @@
                         {{ __('Gerechten') }}
                     </a>
                 </x-checkout-button>
-                <x-checkout-button>{{ __('Verkoop Overzicht') }}</x-checkout-button>
+                <x-checkout-button>
+                    <a href="{{ route('sales') }}">
+                        {{ __('Verkoop Overzicht') }}
+                    </a>
+                </x-checkout-button>    
                 <form method="POST" class="inline-block" action="{{ route('logout') }}">
                     @csrf
                     <x-checkout-button class="ml-12">
@@ -46,7 +51,7 @@
             <div></div>
         </div>
         <div class="flex flex-col justify-start items-center">
-            <div class="w-full px-8 py-4 shadow-md overflow-hidden">
+            <div class="w-full px-4 py-2 shadow-md overflow-hidden">
                 {{ $slot }}
             </div>
         </div>

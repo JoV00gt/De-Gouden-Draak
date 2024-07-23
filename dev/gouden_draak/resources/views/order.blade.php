@@ -28,7 +28,7 @@
                      <td>@{{ item.id }}.</td>
                      <td>@{{ item.name }}<i>@{{item.description}}</i></td>
                      <td>€ @{{ (item.price * item.quantity).toFixed(2).replace('.', ',') }}</td>
-                     <td><input class="w-full" type="number" v-model="item.quantity"></td>
+                     <td><input class="w-full" type="number" min="1" v-model="item.quantity"></td>
                   </tr>
                </table>
             </div>
@@ -42,7 +42,7 @@
                         <span class="totalAmount">@{{ totalAmount.toFixed(2).replace('.', ',') }}</span>
                      </td>
                      <td>
-                        <button class="primary-button" id="payOrder">Afrekenen</button>
+                        <button class="primary-button" @click="payOrder" id="payOrder">Afrekenen</button>
                         <button class="secondary-button"  @click="clearOrder" id="clearOrder">Verwijderen</button>
                      </td>
                   </tr>
