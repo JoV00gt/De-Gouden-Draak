@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
         el: '#app',
         data: {
             order: [],
+            show: {
+                type: Boolean,
+                default: false,
+              },
         },
         computed: {
             totalAmount() {
@@ -27,10 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.order = [];
             },
             async payOrder() {
-                if(this.order.length <= 0) {
-                    return;
-                }
-
                 try {
                     await axios.post('/order', {
                         orderData: this.order
@@ -42,8 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     this.clearOrder();
                 } catch (error) {
-                    console.error('Error placing order:', error);
-                    alert('An error occurred while placing the order.: ' + error);
+                    if (error.response && error.response.status === 422) {
+                        const errors = error.response.data.errors;
+
+                        const errorMessage = Object.values(errors).flat().join(', ');
+
+                        document.getElementById('orderModal').style.display = 'block';
+                        const message = document.getElementById('message');
+                        message.textContent = errorMessage;
+                    }
                 }
             }
         }

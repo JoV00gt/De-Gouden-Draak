@@ -8,6 +8,8 @@ use App\Models\Dish;
 use App\Models\Order;
 use App\Models\OrderItem;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class OrderingController extends Controller
 {
@@ -22,10 +24,23 @@ class OrderingController extends Controller
     {
         $orderData = $request->input('orderData');
 
-        $request->validate([
-            'orderData' => 'required|array',
-            'orderData.*.quantity' => 'required|min:1',
-        ]);
+        $rules = [
+            'orderData' => ['required', 'array', function ($attribute, $value, $fail) {
+                if (count($value) === 0) {
+                    $fail('The ' . $attribute . ' array must contain at least one item.');
+                }
+            }],
+            'orderData.*.quantity' => 'required|integer|min:1',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            //Log::error('Validation failed:', $validator->errors()->toArray());
+            return response()->json([
+                'errors' => $validator->errors()
+            ], 422);
+        }
 
         $order = Order::create([
             'date' => Carbon::now(),

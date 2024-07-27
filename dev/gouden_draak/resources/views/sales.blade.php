@@ -3,21 +3,26 @@
         <div class="date-picker-tab border-box p-2.5 mt-5">
             <div class="dates p-5 w-full h-full border-box">
                 <div>
-                    <form method="GET" action="{{ route('sales.overview') }}" class="flex">
+                    <form id="app" method="GET" action="{{ route('sales.overview') }}" class="flex"
+                        data-errors="{{ json_encode($errors->first()) }}"
+                        data-show-errors="{{ json_encode($errors->any()) }}">
                         @csrf
                         <div class="flex-col space-y-1">
                             <div class="flex justify-between">
                                 <label>Begin Datum:</label>
-                                <input class="date-input" type="date" name="begindate"></input>
+                                <input class="date-input" type="date" value="{{ request('begindate') }}" name="begindate"></input>
                             </div>
                             <div class="flex justify-between">
                                 <label>Eind datum:</label>
-                                <input class="date-input" type="date" name="enddate"></input>
+                                <input class="date-input" type="date" value="{{ request('enddate') }}" name="enddate"></input>
                            </div>
                         </div>
                         <div>
                             <button class="overview-button">Maak Overzicht</button>
                         </div>
+                        @if($errors->any())
+                            <x-error-modal id="salesModal">{{ $errors->first() }}</x-error-modal>
+                        @endif
                     </form>
                 </div>
             </div>
@@ -28,11 +33,11 @@
                     <tbody>
                         <tr>
                             <td>Omzet:</td>
-                            <td><span>€ </span><span>0,00</span></td>
+                            <td><span>€ </span><span>{{ number_format($total ?? 0, 2, ',', '.') }}</span></td>
                             <td>BTW:</td>
-                            <td><span>€ </span><span >0,00</span></td>
+                            <td><span>€ </span><span>{{ number_format(($total ?? 0) - ($exVat ?? 0), 2, ',', '.') }}</span></td>
                             <td>excl. BTW:</td>
-                            <td><span>€ </span><span>0,00</span></td>
+                            <td><span>€ </span><span>{{ number_format($exVat ?? 0, 2, ',', '.') }}</span></td>
                         </tr>
                     </tbody>
                 </table>

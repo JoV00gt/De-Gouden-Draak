@@ -36,7 +36,7 @@
 .overview th:nth-child(4),
 .overview td:nth-child(odd),
 .overview td:nth-child(4) {
-    width: 9%;
+    width: 11%;
     text-align: center;
 }
 

@@ -47,6 +47,9 @@
                      </td>
                   </tr>
                </table>
+               <x-error-modal id="orderModal">
+                  <span id="message"></span>
+               </x-error-modal>
             </div>
          </div>
       </div>
