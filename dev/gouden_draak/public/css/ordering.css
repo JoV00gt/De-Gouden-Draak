@@ -1,0 +1,81 @@
+.dishes-tab {
+    height: 600px;
+    width: 60%;
+    border-right: 2px solid rgb(0,102,255);
+}
+
+.ordering-tab-menu, .ordering-tab {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(0,102,255);
+    border-radius: 5px 0px 0px 5px;
+}
+
+.select-tab {
+    height: 600px;
+    width: 40%;
+}
+
+.ordering-tab {
+    height: 85%;
+}
+
+.total-tab {
+    height: 15%;
+    border: 1px solid rgb(0,102,255);
+    border-radius: 5px;
+}
+
+.menu-header, .order-header {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.menu-header:first-child {
+    margin-top: 0;
+}
+
+.dishes-table {
+    width: 100%;
+
+}
+
+.total-table {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.item-selected-table tr td:nth-child(1) {
+    width: 10%;
+}
+
+.total-table tr td:nth-child(1),
+.dishes-table tr td:nth-child(1) {
+    width: 10%;
+    vertical-align: top;
+}
+
+.item-selected-table tr td:nth-child(2){
+    width: 65%;
+}
+
+
+.dishes-table tr td:nth-child(2){
+    width: 70%;
+}
+
+.item-selected-table tr td:nth-child(3),
+.dishes-table tr td:nth-child(3){
+    width: 10%;
+    min-width: 70px;
+}
+
+.total-table tr td:nth-child(2){
+    width: 50%;
+}
+
+.total-table tr td:nth-child(3){
+    width: 20%;
+}
