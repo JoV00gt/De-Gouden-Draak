@@ -34,7 +34,7 @@
                     </a>
                 </x-checkout-button>
                 <x-checkout-button>
-                    <a href="{{ route('menu') }}">
+                    <a href="{{ route('menu.index') }}">
                         {{ __('Gerechten') }}
                     </a>
                 </x-checkout-button>

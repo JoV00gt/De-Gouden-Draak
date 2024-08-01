@@ -33,6 +33,14 @@
     margin: 10px 0px 10px 0px;
 }
 
+.menu-table-header {
+    background-color: rgb(0, 102, 255);
+}
+
+.menu-table {
+    border-bottom: 3px solid rgb(0, 102, 255);
+}
+
 .menu-header:first-child {
     margin-top: 0;
 }
