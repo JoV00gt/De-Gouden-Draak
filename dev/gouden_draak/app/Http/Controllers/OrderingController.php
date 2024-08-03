@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use App\Models\Dish;
 use App\Models\Order;
@@ -20,7 +21,7 @@ class OrderingController extends Controller
         return view ('order')->with(compact('items'));
     }
 
-    public function store(Request $request) 
+    public function store(Request $request)
     {
         $orderData = $request->input('orderData');
 
@@ -36,7 +37,6 @@ class OrderingController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            //Log::error('Validation failed:', $validator->errors()->toArray());
             return response()->json([
                 'errors' => $validator->errors()
             ], 422);

@@ -14,4 +14,9 @@ class Dish extends Model
     protected $guarded = [];
 
     public $timestamps = true;
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'menu_id', 'id');
+    }
 }

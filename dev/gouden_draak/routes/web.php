@@ -24,6 +24,14 @@ Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
 });
 
+Route::group(['middleware' => ['auth', 'role:admin']], function() {
+    Route::get('menu/create', [MenuController::class, 'create'])->name('menu.create');
+    Route::post('menu', [MenuController::class, 'store'])->name('menu.store');
+    Route::get('menu/{id}',  [MenuController::class, 'edit'])->name('menu.edit');
+    Route::put('menu/{id}',  [MenuController::class, 'update'])->name('menu.update');
+    Route::delete('menu/{id}',  [MenuController::class, 'destroy'])->name('menu.destroy');
+});
+
 Route::post('/order', [OrderingController::class, 'store'])->name('order.store');
 Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'role:employee'])->name('order');
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'role:employee'])->name('sales.overview');

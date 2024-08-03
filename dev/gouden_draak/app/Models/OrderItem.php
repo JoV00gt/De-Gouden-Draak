@@ -17,12 +17,12 @@ class OrderItem extends Model
 
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class, 'order_id', 'id');
     }
 
     public function dish()
     {
-        return $this->hasOne(Dish::class, 'id');
+        return $this->belongsTo(Dish::class, 'menu_id', 'id');
     }
 
 
