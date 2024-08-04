@@ -9,8 +9,13 @@ class PDFController extends Controller
 {
     public function generatePDF()
     {
-        $data = ['title' => 'Bestelling de Gouden Draak'];
+        
+
+
+        $data = ['title' => 'Bestelling van de Gouden Draak'];
+
         $pdf = PDF::loadView('pdf.order', $data);
+
         return $pdf->download('order.pdf');
     }
 }
