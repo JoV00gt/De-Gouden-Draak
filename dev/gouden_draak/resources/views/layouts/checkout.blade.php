@@ -20,6 +20,8 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
         <script src="{{ asset('js/ordering.js') }}" defer></script>
         <script src="{{ asset('js/salesModal.js') }}" defer></script>
+        <script src="{{ asset('js/menu.js') }}" defer></script>
+        <script src="{{ asset('js/flash.js') }}" defer></script>
         <script src="{{ asset('js/orderModal.js') }}" defer></script>
     </head>
     <body class="font-sans text-gray-900 antialiased">
@@ -34,7 +36,7 @@
                     </a>
                 </x-checkout-button>
                 <x-checkout-button>
-                    <a href="{{ route('menu') }}">
+                    <a href="{{ route('menu.index') }}">
                         {{ __('Gerechten') }}
                     </a>
                 </x-checkout-button>
@@ -53,7 +55,7 @@
             <div></div>
         </div>
         <div class="flex flex-col justify-start items-center">
-            <div class="w-full px-4 py-2 shadow-md overflow-hidden">
+            <div class="w-full px-4 py-2 overflow-hidden">
                 {{ $slot }}
             </div>
         </div>
