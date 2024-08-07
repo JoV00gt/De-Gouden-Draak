@@ -13,6 +13,7 @@ export default {
         extend: {
             backgroundImage: {
                 backgroundbutton: "url('/public/images/menu_bg_gradient.png')",
+                backgroundborders: "url('/public/images/restaurantkader.png')",
             },
             fontFamily: {
                 sans: ["Microsoft YaHei", "sans-serif"],

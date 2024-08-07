@@ -24,25 +24,28 @@
                 <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="w-12 h-12">
             </div>
         </div>
-        <div class="flex flex-row justify-between m-24 font-sans">
-            <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="w-52 h-52">
-            <div class="text-center text-4xl font-bold text-[#ffff00]">
-                <h1 class="m-2">Chinees Indische Specialiteiten</h1>
-                <h1 class="m-2">De Gouden Draak</h1>
-                <div class="flex flex-row justify-center text-white font-bold text-sm p-1 border border-black">
-                    <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Menukaart</a>
-                    <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Nieuws</a>
-                    <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Contact</a>
+        <div class="bg-img bg-backgroundborders bg-cover p-16">
+            <div class="flex flex-row justify-between m-24 font-sans">
+                <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="w-52 h-52">
+                <div class="text-center text-4xl font-bold text-[#ffff00]">
+                    <h1 class="m-2">Chinees Indische Specialiteiten</h1>
+                    <h1 class="m-2">De Gouden Draak</h1>
+                    <div class="flex flex-row justify-center text-white font-bold text-sm p-1 border border-black">
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Menukaart</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Nieuws</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/">Contact</a>
+                    </div>
                 </div>
+                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="w-52 h-52">
             </div>
-            <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="w-52 h-52">
+            <div class="ml-48 mr-48 mb-6 bg-white border border-black p-10">
+                {{ $slot }}
+            </div>
+            <div class="flex flex-row justify-center mb-10">
+                <a href="/contact" class="text-sm text-[#ffff00]">Naar contact</a>
+            </div>
         </div>
-        <div class="ml-48 mr-48 mb-6 bg-white border border-black">
-            {{ $slot }}
-        </div>
-        <div class="flex flex-row justify-center mb-10">
-            <a href="/contact" class="text-sm text-[#ffff00]">Naar contact</a>
-        </div>
+
     </div>
 </body>
 
