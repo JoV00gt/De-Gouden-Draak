@@ -28,7 +28,7 @@ Route::get('/menu', function() {
     return view('menu');
 })->middleware(['auth', 'verified'])->name('menu');
 
-Route::get('generate-bill', [PDFController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('generatePDF');
+Route::post('generate-bill', [PDFController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('generatePDF');
 Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'verified'])->name('order');
 Route::post('/order', [OrderingController::class, 'store'])->name('order.store');
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'verified'])->name('sales.overview');

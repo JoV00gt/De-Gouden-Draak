@@ -9,7 +9,6 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Log;
 
 class OrderingController extends Controller
 {
@@ -36,7 +35,6 @@ class OrderingController extends Controller
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
-            //Log::error('Validation failed:', $validator->errors()->toArray());
             return response()->json([
                 'errors' => $validator->errors()
             ], 422);

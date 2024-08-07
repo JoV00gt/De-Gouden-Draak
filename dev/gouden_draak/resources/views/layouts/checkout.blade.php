@@ -21,6 +21,7 @@
         <script src="{{ asset('js/ordering.js') }}" defer></script>
         <script src="{{ asset('js/salesModal.js') }}" defer></script>
         <script src="{{ asset('js/orderModal.js') }}" defer></script>
+        <script src="{{ asset('js/flash.js') }}" defer></script>
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex justify-between border-b-blue-600 border-b-[3px] p-2">

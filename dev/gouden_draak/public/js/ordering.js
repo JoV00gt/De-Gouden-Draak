@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 return this.order.reduce((total, item) => {
                     return total + (item.price * item.quantity);
                 }, 0);
+            },
+            orderData() {
+                return JSON.stringify(this.order);
             }
         },
         methods: {
