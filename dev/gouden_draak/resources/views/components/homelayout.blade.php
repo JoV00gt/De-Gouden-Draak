@@ -1,7 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+        
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+    
 </head>
 
 <body class="bg-[#8B0B00]">
@@ -24,7 +33,8 @@
                 <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="w-12 h-12">
             </div>
         </div>
-        <div class="bg-img bg-backgroundborders bg-cover p-16">
+        <div class="bg-img bg-backgroundborders bg-cover p-16 outer-border">
+            <div class="inner-border">
             <div class="flex flex-row justify-between m-24 font-sans">
                 <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="w-52 h-52">
                 <div class="text-center text-4xl font-bold text-[#ffff00]">
@@ -44,6 +54,8 @@
             <div class="flex flex-row justify-center mb-10">
                 <a href="/contact" class="text-sm text-[#ffff00]">Naar contact</a>
             </div>
+            </div>
+
         </div>
 
     </div>

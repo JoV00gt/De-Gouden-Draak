@@ -1,0 +1,13 @@
+.outer-border {
+    border: 5px solid yellow; /* Outer yellow border */
+    padding: 20px; /* Space between the borders */
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+}
+
+.inner-border {
+    border: 5px solid yellow; /* Inner yellow border */
+    padding: 20px;
+    position: relative;
+}
