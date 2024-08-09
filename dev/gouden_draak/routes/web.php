@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MenuController;
+use App\Http\Controllers\CustomerMenuController;
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'Home'])->name('Home');
 Route::get('/contact', [ContactController::class, 'index'])->name('index');
 Route::get('/news', [NewsController::class, 'index'])->name('index');
-Route::get('/menu', [MenuController::class, 'index'])->name('index');
+Route::get('/menu', [CustomerMenuController::class, 'index'])->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
