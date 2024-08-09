@@ -21,6 +21,7 @@
         <script src="{{ asset('js/ordering.js') }}" defer></script>
         <script src="{{ asset('js/salesModal.js') }}" defer></script>
         <script src="{{ asset('js/menu.js') }}" defer></script>
+        <script src="{{ asset('js/vue-components/search-bar.js') }}" defer></script>
         <script src="{{ asset('js/flash.js') }}" defer></script>
         <script src="{{ asset('js/orderModal.js') }}" defer></script>
     </head>

@@ -33,7 +33,7 @@ class MenuController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'max:255',
-            'price' => 'required|numeric|gt:0',
+            'price' => 'required|numeric|gt:0', 
             'category' => 'required_without:new_category|nullable|exists:dishes,name',
             'new_category' => [
                 'required_without:category',
