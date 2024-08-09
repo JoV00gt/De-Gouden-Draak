@@ -29,18 +29,11 @@
         </div>
         <div class="total-sales-tab mt-5 p-2.5 border-box">
             <div class="total-info p-5 w-full h-full border-box">
-                <table class="w-full">
-                    <tbody>
-                        <tr>
-                            <td>Omzet:</td>
-                            <td><span>€ </span><span>{{ number_format($total ?? 0, 2, ',', '.') }}</span></td>
-                            <td>BTW:</td>
-                            <td><span>€ </span><span>{{ number_format(($total ?? 0) - ($exVat ?? 0), 2, ',', '.') }}</span></td>
-                            <td>excl. BTW:</td>
-                            <td><span>€ </span><span>{{ number_format($exVat ?? 0, 2, ',', '.') }}</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="flex flex-row justify-between w-full">
+                    <span>Omzet: </span><span>€ {{ number_format($total ?? 0, 2, ',', '.') }}</span>
+                    <span>BTW: </span><span>€ {{ number_format(($total ?? 0) - ($exVat ?? 0), 2, ',', '.') }}</span>
+                    <span>excl. BTW: </span><span>€ {{ number_format($exVat ?? 0, 2, ',', '.') }}</span>
+                </div>
             </div>
         </div>
     </div>

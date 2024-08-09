@@ -76,8 +76,7 @@
     border-radius: 5px;
 }
 
-.total-info td {
-    width: 16%;
+.total-info span {
     font-weight: bold;
     font-size: 25px;
 }
