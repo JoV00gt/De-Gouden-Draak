@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OrderingController;
 use App\Http\Controllers\SalesController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::delete('menu/{id}',  [MenuController::class, 'destroy'])->name('menu.destroy');
 });
 
+Route::post('generate-bill', [PDFController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('generatePDF');
 Route::post('/order', [OrderingController::class, 'store'])->name('order.store');
 Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'role:employee'])->name('order');
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'role:employee'])->name('sales.overview');
