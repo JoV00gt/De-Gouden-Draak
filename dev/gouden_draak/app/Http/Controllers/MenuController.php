@@ -14,9 +14,10 @@ class MenuController extends Controller
 {
     public function index(): View 
     {
+
         $items = Dish::orderBy('addition')
         ->orderBy('item_number')
-        ->paginate(15);
+        ->get();
 
         return view('menu.index')->with(compact('items'));
     }

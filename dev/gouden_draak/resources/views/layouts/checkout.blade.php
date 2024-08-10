@@ -17,11 +17,10 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        <script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
-        <script src="{{ asset('js/ordering.js') }}" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vuex"></script>
         <script src="{{ asset('js/salesModal.js') }}" defer></script>
         <script src="{{ asset('js/menu.js') }}" defer></script>
-        <script src="{{ asset('js/vue-components/search-bar.js') }}" defer></script>
         <script src="{{ asset('js/flash.js') }}" defer></script>
         <script src="{{ asset('js/orderModal.js') }}" defer></script>
     </head>

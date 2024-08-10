@@ -1,12 +1,15 @@
 <x-checkout-layout>
-    <div id="app">
+    <div id="menuroot">
         @if(session()->has('success'))
             <div>
                 <x-flash-message class="bg-green-400 dark:bg-green-800">{{ session('success') }}</x-flash-message>
             <div>
         @endif
         <div class="pt-4 flex justify-between">
-            <search-bar @search="updateSearchQuery"></search-bar>
+            <div class="flex space-x-8">
+                <search-bar  @search="updateSearchQuery"></search-bar>
+                <category-filter :categories="categories" @category-selected="updateCategory"></category-filter>
+            </div>
             @role('admin')
                 <x-primary-button>
                     <a href="{{ route('menu.create') }}">Gerecht Toevoegen</a>
@@ -14,7 +17,7 @@
             @endrole
         </div>
         <div class="pt-2">
-   <table class=" menu-table min-w-full divide-y divide-gray-200">
+   <table v-if="hasResults" class=" menu-table min-w-full divide-y divide-gray-200">
     <thead class="menu-table-header">
         <tr>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Item</th>
@@ -55,12 +58,11 @@
                 </tr>
             </tbody>
     </table>
-    <div class="py-4 px-3">
-        {{ $items->links() }}
+    <div v-else class="flex h-full items-center justify-center text-4xl w-full">
+        <p>No results found</p>
     </div>
    </div>
     </div>
-    <script>
-        window.items = @json($items->items());
-    </script>
+    <script> window.items = @json($items) </script>
+    <script src="{{ asset('js/vue/search-bar.js') }}" defer></script>
 </x-checkout-layout>
