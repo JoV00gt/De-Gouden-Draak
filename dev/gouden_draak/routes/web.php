@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CustomerMenuController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrderingController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\PDFController;
@@ -17,9 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'Home'])->name('Home');
+Route::get('/contact', [ContactController::class, 'index'])->name('index');
+Route::get('/news', [NewsController::class, 'index'])->name('index');
+Route::get('/menu', [CustomerMenuController::class, 'index'])->name('index');
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
@@ -39,4 +44,4 @@ Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'role:employee'])->name('sales.overview');
 Route::get('/sales', [SalesController::class, 'index'])->middleware(['auth', 'role:employee'])->name('sales');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
