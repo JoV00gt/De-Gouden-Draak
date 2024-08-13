@@ -1,4 +1,4 @@
-<x-homelayout>
+<x-home-layout>
     <div>
         <div class="text-center">
             <p>De Gouden Draak is eenvoudig te vinden, vlak bij het centrum, 5 minuten lopen achter het centraal station.</p>
@@ -11,4 +11,4 @@
             </div>
         </div>
     </div>
-</x-homelayout>
+</x-home-layout>

@@ -1,7 +1,6 @@
-<x-homelayout>
-    <div class="text-center">
-        <h1>Door de Corona crisis is De Gouden Draak op het moment slechts beperkt open.
-            Het restaurant-gedeelte is gesloten. U kan uw favoriete gerechten nog wel afhalen.</h1>
+<x-home-layout>
+    <div class="text-center font-bold text-balance p-10">
+        <h1>{{__('news')}}</h1>
     </div>
 
-</x-homelayout>
+</x-home-layout>
