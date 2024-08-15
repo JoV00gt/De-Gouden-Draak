@@ -1,10 +1,10 @@
 <x-checkout-layout>
+   <div id="orderingroot" v-cloak class="flex flex-row">
    @if(session()->has('error'))
         <div>
             <x-flash-message class="bg-red-400 dark:bg-red-800">{{ session('error') }}</x-flash-message>
         <div>
     @endif
-   <div id="app" v-cloak class="flex flex-row">
       <div class="dishes-tab mt-5 p-2.5 box-border">
         <div class="ordering-tab-menu box-border p-5 overflow-y-scroll">
             @foreach($items as $type => $dishes)
@@ -61,6 +61,7 @@
          </div>
       </div>
    </div>
+   <script src="{{ asset('js/vue/ordering.js') }}" defer></script>
 </x-checkout-layout>
 <style>
    [v-cloak] { display: none; }

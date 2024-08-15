@@ -14,9 +14,10 @@ class MenuController extends Controller
 {
     public function index(): View 
     {
+
         $items = Dish::orderBy('addition')
         ->orderBy('item_number')
-        ->paginate(15);
+        ->get();
 
         return view('menu.index')->with(compact('items'));
     }
@@ -33,7 +34,7 @@ class MenuController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'max:255',
-            'price' => 'required|numeric|gt:0',
+            'price' => 'required|numeric|gt:0', 
             'category' => 'required_without:new_category|nullable|exists:dishes,name',
             'new_category' => [
                 'required_without:category',
