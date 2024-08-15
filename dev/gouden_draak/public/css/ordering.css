@@ -62,7 +62,6 @@
 .total-table tr td:nth-child(1),
 .dishes-table tr td:nth-child(1) {
     width: 10%;
-    vertical-align: top;
 }
 
 .item-selected-table tr td:nth-child(2){

@@ -1,8 +1,8 @@
 <x-home-layout>
-    <div class="text-bold  text-center">
-        <p class="mb-4">{{__('introduction')}}</p>
-        <!-- TODO: Aanbiedingen automatisch inladen Bart -->
-        <h1 class="underline text-lg mb-2">Speciale Studentenaanbieding</h1>
+    <div class="font-bold p-10 text-center">
+        <h2 class="mb-4">{{__('introduction')}}</h2>
+        <!-- TODO: Aanbiedingen automatisch inladen-->
+        <span class="underline text-lg mb-2">Speciale Studentenaanbieding</span>
         <h1 class="underline text-2xl">Chinese Rijsttafel (2 personen)
         </h1>
         <p>Maak een keuze uit 3 van onderstaande keuzegerechten: <br><br>

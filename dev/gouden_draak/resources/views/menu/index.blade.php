@@ -8,7 +8,7 @@
     @role('admin')
         <x-primary-button>
             <a href="{{ route('menu.create') }}">
-                Gerecht Toevoegen
+               {{__('dishes-add')}}
             </a>
         </x-primary-button>
     @endrole
@@ -17,12 +17,12 @@
    <table class=" menu-table min-w-full divide-y divide-gray-200">
     <thead class="menu-table-header">
         <tr>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Item</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Categorie</th>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Price</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('dishes-item')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('name')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('category')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('price')}}</th>
             @role('admin')
-                <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Actions</th>
+                <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('dishes-actions')}}</th>
             @endrole
         </tr>
     </thead>
@@ -35,13 +35,13 @@
                 <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">€ {{ $item->price }}</td>
                 @role('admin')
                     <td>
-                        <a href="{{ route('menu.edit', $item->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Aanpassen</a>
+                        <a href="{{ route('menu.edit', $item->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">{{__('dishes-edit')}}</a>
                     </td>
                     <td>
                         <form method="post" action="{{ route('menu.destroy', $item->id) }}">
                             @csrf
                             @method('DELETE')
-                            <x-danger-button>Verwijderen</x-danger-button>
+                            <x-danger-button>{{__('dishes-delete')}}</x-danger-button>
                         </form>
                     </td>
                 @endrole

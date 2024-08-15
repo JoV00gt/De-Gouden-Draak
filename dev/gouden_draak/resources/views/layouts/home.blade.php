@@ -18,12 +18,12 @@
     </head>
     <body class="bg-[#8B0B00]">
     <!-- scrolling bar with text -->
-    <div class="m-5 ml-10 mr-10 bg-[#FF1D00]">
+    <div class="m-5 ml-12 mr-12 bg-[#FF1D00]">
         <div class="flex flex-row font-chinese justify-between pb-1 text-3xl text-[#ffff00]">
             <div class="flex flex-row items-center ml-14">
-                <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="h-14 max-w-xs w-14">
-                <h1>{{__('title')}}</h1>
-                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="h-14 max-w-xs w-14">
+                <img src="{{ asset('images/dragon-small.png') }}" alt="" class="h-12 max-w-xs w-12">
+                <h2>{{__('title')}}</h2>
+                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="" class="h-12 max-w-xs w-12">
             </div>
             <div class="content-center flex">
                 <marquee behavior="scroll" direction="left" class="m-1 mr-2">
@@ -35,31 +35,31 @@
                 </div>
             </div>
             <div class="flex flex-row items-center mr-14">
-                <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="h-14 max-w-xs w-14">
-                <h1>{{__('title')}}</h1>
-                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="h-14 max-w-xs w-14">
+                <img src="{{ asset('images/dragon-small.png') }}" alt="" class="h-12 max-w-xs w-12">
+                <h2>{{__('title')}}</h2>
+                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="" class="h-12 max-w-xs w-12">
             </div>
         </div>
         <div class="bg-background-borders">
             <div>
-            <div class="flex flex-row justify-between m-24 font-sans">
-                <img src="{{ asset('images/dragon-small.png') }}" alt="logo" class="w-52 h-52">
+            <div class="flex flex-row font-sans justify-between mb-14 ml-24 mr-24">
+                <img src="{{ asset('images/dragon-small.png') }}" alt="" class="w-52 h-52">
                 <div class="text-center text-4xl font-bold text-[#ffff00]">
-                    <h1 class="m-2">{{__('subtitle')}}</h1>
+                    <h2 class="m-2">{{__('subtitle')}}</h2>
                     <h1 class="m-2">{{__('title')}}</h1>
-                    <div class="inline-flex flex-wrap border border-black text-sm text-white">
-                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="{{route('customer.index')}}">{{__('nav-menu')}}</a>
-                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="{{route('news')}}">{{__('nav-news')}}</a>
-                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="{{route('contact')}}">{{__('nav-contact')}}</a>
-                    </div>
+                    <nav class="inline-flex flex-wrap border border-black text-sm text-white">
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('customer.index')}}">{{__('nav-menu')}}</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('news')}}">{{__('nav-news')}}</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('contact')}}">{{__('nav-contact')}}</a>
+                    </nav>
                 </div>
-                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="logo" class="w-52 h-52">
+                <img src="{{ asset('images/dragon-small-flipped.png') }}" alt="" class="w-52 h-52">
             </div>
-            <div class="ml-40 mr-40 mb-6 bg-white border border-black">
+            <div class="bg-[#FFFAF0] border border-black mb-6 ml-20 mr-20">
                 {{ $slot }}
             </div>
             <div class="flex flex-row justify-center mb-10">
-                <a href="/contact" class="text-sm text-[#ffff00]">{{__('contact-link')}}</a>
+                <a href="{{route('contact')}}" class="text-2xl text-[#ffff00]">{{__('contact-link')}}</a>
             </div>
             </div>
         </div>
