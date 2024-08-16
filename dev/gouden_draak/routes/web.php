@@ -4,6 +4,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerMenuController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\DealController;
 use App\Http\Controllers\OrderingController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\PDFController;
@@ -28,6 +29,13 @@ Route::get('/menu', [CustomerMenuController::class, 'index'])->name('index');
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
+    Route::get('deals/index', [DealController::class, 'index'])->name('deals.index');
+    Route::get('deals/create', [DealController::class, 'create'])->name('deals.create');
+    Route::post('deals/create', [DealController::class, 'store'])->name('deals.store');
+    Route::get('deals/{id}',  [DealController::class, 'edit'])->name('deals.edit');
+    Route::put('deals/{id}',  [DealController::class, 'update'])->name('deals.update');
+    Route::delete('deals/{id}',  [DealController::class, 'destroy'])->name('deals.destroy');
+    Route::get('deals', [DealController::class, 'deals'])->name('deals.deals');
 });
 
 Route::group(['middleware' => ['auth', 'role:admin']], function() {
