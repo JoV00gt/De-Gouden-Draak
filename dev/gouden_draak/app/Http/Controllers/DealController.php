@@ -110,4 +110,10 @@ class DealController extends Controller
 
         return redirect()->route('deals.index')->with('success', 'Aanbieding is succesvol verwijderd'); //TODO: translation
     }
+
+    public function deals(): View
+    {
+        $deals = Deal::whereDate('expire_date', '>', Carbon::today())->with(['dish'])->orderBy('start_date')->get();
+        return view('deals.deals')->with(compact('deals'));
+    }
 }

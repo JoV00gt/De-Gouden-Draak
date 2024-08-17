@@ -41,8 +41,9 @@
                     <h1 class="m-2">Chinees Indische Specialiteiten</h1>
                     <h1 class="m-2">De Gouden Draak</h1>
                     <div class="flex flex-row justify-center text-white font-bold text-sm p-1 border border-black">
-                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/menu">Menukaart</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="{{route('customer.index')}}">Menukaart</a>
                         <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/news">Nieuws</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="{{route('deals.deals')}}">Aanbiedingen</a>
                         <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-backgroundbutton" href="/contact">Contact</a>
                     </div>
                 </div>

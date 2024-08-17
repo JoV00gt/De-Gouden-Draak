@@ -24,8 +24,9 @@
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Categorie</th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Price</th>
+            <th scope="col" colspan="2" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Deals</th> <!--TODO: translation -->
             @role('admin')
-                <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Actions</th>
+                <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider"></th>
             @endrole
         </tr>
     </thead>
@@ -43,9 +44,12 @@
                     <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         € @{{ formatPrice(item.price) }}
                     </td>
+                    <td colspan="2" class="max-w-lg px-6 py-4 whitespace-nowrap text-sm text-gray-500" v-if="item.final_price && item.final_price != item.price">
+                        € @{{ formatPrice(item.final_price) }} <i>(@{{ item.deal_start_date }} to @{{ item.deal_expire_date }})</i> 
+                    </td>
                     @role('admin')
                         <td>
-                            <a :href="'/menu/edit/' + item.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Aanpassen</a>
+                            <a :href="'/menu/edit/' + item.id" class="bg-blue-500 mr-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Aanpassen</a>
                         </td>
                         <td>
                             <form :action="'/menu/destroy/' + item.id" method="post">

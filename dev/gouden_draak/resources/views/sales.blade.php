@@ -66,9 +66,9 @@
                             <tr>
                                 <td>{{ \Carbon\Carbon::parse($item->order->date)->format('d-m-Y') }}</td>
                                 <td>{{ $item->dish->name }}</td> 
-                                <td>€ {{ number_format($item->dish->price, 2, ',', '.') }}</td>
+                                <td>€ {{ number_format($item->dish->getFinalPriceAttribute($item->order->date), 2, ',', '.') }}</td>
                                 <td>{{ $item->amount }}</td> 
-                                <td>€ {{ number_format($item->dish->price * $item->amount, 2, ',', '.') }}</td>
+                                <td>€ {{ number_format($item->dish->getFinalPriceAttribute($item->order->date) * $item->amount, 2, ',', '.') }}</td>
                             </tr>
                         @endforeach
                     </tbody>

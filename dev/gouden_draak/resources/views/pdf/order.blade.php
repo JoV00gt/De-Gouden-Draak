@@ -26,9 +26,9 @@
                     <tr>
                         <td>{{ $item['id'] }}.</td>
                         <td>{{ $item['name'] }}</td>
-                        <td>€ {{ number_format($item['price'], 2, ',', '.') }}</td>
+                        <td>€ {{ number_format($item['final_price'], 2, ',', '.') }}</td>
                         <td>{{ $item['quantity'] }}</td>
-                        <td>€ {{ number_format($item['price'] * $item['quantity'], 2, ',', '.') }}</td>
+                        <td>€ {{ number_format($item['final_price'] * $item['quantity'], 2, ',', '.') }}</td>
                     </tr>
                 @endforeach
             </tbody>

@@ -18,7 +18,7 @@
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th> <!-- TODO: Translation -->
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">New Price</th> <!-- TODO: Translation -->
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Geldigheid</th> <!-- TODO: Translation -->
-            <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Actions</th> <!-- TODO: Translation -->
+            <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider"></th>
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">

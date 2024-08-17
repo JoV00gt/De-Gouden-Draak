@@ -1,4 +1,6 @@
 <x-homelayout>
-    <img class="object-cover" src="images/menu/restaurant-menukaart-1.jpg" alt="">
-    <img class="object-cover" src="images/menu/restaurant-menukaart-1-2.jpg" alt="">
+   <div class="text-bold text-center"> <!--TODO: Translation -->
+    <h2 class="text-xl mb-6">Ons menu willen inzien download de PDF</h2>
+    <x-primary-button type="submit"><a href="{{route('menu.download')}}">Menu downloaden</a></x-primary-button>
+   </div>
 </x-homelayout>

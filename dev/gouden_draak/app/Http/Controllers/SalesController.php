@@ -28,7 +28,7 @@ class SalesController extends Controller
         $items = OrderItem::whereIn('order_id', $orderIds)->with(['order', 'dish'])->get();
 
         $total = $items->reduce(function ($carry, $item) {
-            return $carry + ($item->dish->price * $item->amount);
+            return $carry + ($item->dish->getFinalPriceAttribute($item->order->date) * $item->amount);
         }, 0);
         $totalXVat = ($total/106)*100;
 

@@ -16,20 +16,40 @@ class Dish extends Model
 
     public $timestamps = true;
 
-    protected $appends = ['final_price'];
+    protected $appends = ['final_price', 'deal_start_date', 'deal_expire_date'];
 
-    public function getFinalPriceAttribute()
+    public function getFinalPriceAttribute($orderDate = null)
+    {
+        $date = $orderDate ? Carbon::parse($orderDate) : Carbon::today();
+
+        $deal = $this->deals()
+                     ->whereDate('start_date', '<=', $date)
+                     ->whereDate('expire_date', '>=', $date)
+                     ->first();
+
+        return $deal ? $deal->price : $this->price;
+    }
+
+    public function getDealStartDateAttribute()
     {
         $today = Carbon::today();
-
-        // Find an active deal for today
         $deal = $this->deals()
                      ->whereDate('start_date', '<=', $today)
                      ->whereDate('expire_date', '>=', $today)
                      ->first();
 
-        // Return the deal price if a deal exists, otherwise return the original price
-        return $deal ? $deal->price : $this->price;
+        return $deal ? Carbon::parse($deal->start_date)->format('d-m-Y') : null;
+    }
+
+    public function getDealExpireDateAttribute()
+    {
+        $today = Carbon::today();
+        $deal = $this->deals()
+                     ->whereDate('start_date', '<=', $today)
+                     ->whereDate('expire_date', '>=', $today)
+                     ->first();
+
+        return $deal ? Carbon::parse($deal->expire_date)->format('d-m-Y') : null;
     }
 
     public function deals()

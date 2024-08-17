@@ -22,10 +22,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'Home'])->name('Home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/contact', [ContactController::class, 'index'])->name('index');
 Route::get('/news', [NewsController::class, 'index'])->name('index');
-Route::get('/menu', [CustomerMenuController::class, 'index'])->name('index');
+Route::get('/customer/menu', [CustomerMenuController::class, 'index'])->name('customer.index');
+Route::get('/menu/download', [PDFController::class, 'generateMenuPDF'])->name('menu.download');
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
