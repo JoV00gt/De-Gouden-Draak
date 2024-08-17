@@ -34,7 +34,7 @@
                         € {{ number_format($deal->price, 2, ',', '.') }}
                     </td>
                     <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {{ $deal->start_date }} - {{ $deal->expire_date }}
+                        {{ date('d-m-Y', strtotime($deal->start_date)) }} - {{ date('d-m-Y', strtotime($deal->expire_date)) }}
                     </td>
                         <td>
                             <a href="{{ route('deals.edit', $deal->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Aanpassen</a> <!-- TODO: Translation -->

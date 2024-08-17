@@ -15,9 +15,10 @@ class OrderingController extends Controller
 {
     public function index(): View 
     {
-        $items = Dish::all()->groupBy('dish');
+        $items = Dish::with('deals')->get()
+        ->groupBy('dish');
 
-        return view ('order')->with(compact('items'));
+        return view('order')->with(compact('items'));
     }
 
     public function store(Request $request)

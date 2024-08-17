@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         computed: {
             totalAmount() {
                 return this.order.reduce((total, item) => {
-                    return total + (item.price * item.quantity);
+                    return total + (item.final_price * item.quantity);
                 }, 0);
             },
             orderData() {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const existingItem = this.order.find(item => item.id === dish.id);
                 if (existingItem) {
                     existingItem.quantity += 1;
+                    
                 } else {
                     this.order.push({
                         ...dish,

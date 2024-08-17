@@ -1,18 +1,19 @@
 <x-checkout-layout>
 <div class="container w-3/4 py-3 mx-auto px-4">
     <h2 class="text-2xl font-bold mb-4">Wijzig aanbieding</h2> <!-- TODO: Translation -->
-    <form action="{{ route('menu.store') }}" method="POST">
+    <form action="{{ route('deals.update', $deal->id) }}" method="POST">
         @csrf
+        @method('PUT')
         <div class="mb-4">
             <label for="start_date" class="block text-gray-700 text-sm font-bold mb-2">Begindatum</label><!-- TODO: Translation -->
-            <input type="date" name="start_date" class="w-full" value="{{ $deal->star_date }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <input type="date" name="start_date" class="w-full" value="{{ $deal->start_date }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             @error('start_date')
                 <span class="text-red-500 text-xs">{{ $message }}</span>
             @enderror
         </div>
         <div class="mb-4">
             <label for="end_date" class="block text-gray-700 text-sm font-bold mb-2">Einddatum</label><!-- TODO: Translation -->
-            <input type="date" name="end_date"class="w-full" value="{{ $deal->end_date }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <input type="date" name="end_date"class="w-full" value="{{ $deal->expire_date }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             @error('end_date')
                 <span class="text-red-500 text-xs">{{ $message }}</span>
             @enderror
