@@ -44,13 +44,32 @@
                             <x-danger-button>{{__('dishes-delete')}}</x-danger-button>
                         </form>
                     </td>
-                @endrole
-            </tr>
-        @endforeach
-    </tbody>
+                    <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        @{{ item.dish }}
+                    </td>
+                    <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        € @{{ formatPrice(item.price) }}
+                    </td>
+                    @role('admin')
+                        <td>
+                            <a :href="'/menu/edit/' + item.id" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Aanpassen</a>
+                        </td>
+                        <td>
+                            <form :action="'/menu/destroy/' + item.id" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <x-danger-button>Verwijderen</x-danger-button>
+                            </form>
+                        </td>
+                    @endrole
+                </tr>
+            </tbody>
     </table>
-    <div class="py-4 px-3">
-        {{ $items->links() }}
+    <div v-else class="flex h-full items-center justify-center text-4xl w-full">
+        <p>No results found</p>
     </div>
    </div>
+    </div>
+    <script> window.items = @json($items) </script>
+    <script src="{{ asset('js/vue/search-bar.js') }}" defer></script>
 </x-checkout-layout>

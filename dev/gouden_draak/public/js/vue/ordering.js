@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     new Vue({
-        el: '#app',
+        el: '#orderingroot',
         data: {
             order: [],
             show: {
