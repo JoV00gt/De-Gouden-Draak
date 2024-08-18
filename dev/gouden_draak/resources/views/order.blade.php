@@ -15,7 +15,7 @@
                         <tr>
                            <td>{{$dish->addition}}{{$dish->item_number}}.</td>
                            <td>{{$dish->name}}<i>{{$dish->description}}</i></td>
-                           <td>€ {{$dish->price}}</td>
+                           <td>€ {{$dish->final_price}}</td>
                            <td><x-primary-button @click="addToOrder({{ json_encode($dish) }})">{{__('order-add-button')}}</x-primary-button></td>
                         </tr>
                      @endforeach
@@ -32,7 +32,7 @@
                   <tr v-for="item in order" :key="item.id">
                      <td>@{{ item.addition }}@{{ item.item_number }}.</td>
                      <td>@{{ item.name }}<i>@{{item.description}}</i></td>
-                     <td>€ @{{ (item.price * item.quantity).toFixed(2).replace('.', ',') }}</td>
+                     <td>€ @{{ (item.final_price * item.quantity).toFixed(2).replace('.', ',') }}</td>
                      <td><input class="w-full" type="number" min="1" v-model="item.quantity"></td>
                   </tr>
                </table>

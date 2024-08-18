@@ -59,6 +59,18 @@ body {
     font-size: 11px;
 }
 
+.page-break {
+    page-break-before: always;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+
+.text-center {
+    text-align: center;
+}
+
 @page :first {
     margin: 0;
 }

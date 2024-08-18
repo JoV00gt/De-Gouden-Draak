@@ -44,7 +44,12 @@
                     <a href="{{ route('sales') }}">
                         {{ __('checkout-nav-sales') }}
                     </a>
-                </x-checkout-button>    
+                </x-checkout-button>
+                <x-checkout-button>
+                    <a href="{{ route('deals.index') }}">
+                        {{ __('Aanbiedingen') }} <!-- TODO: translation -->
+                    </a>
+                </x-checkout-button>        
                 <form method="POST" class="inline-block" action="{{ route('logout') }}">
                     @csrf
                     <x-checkout-button class="ml-12">
