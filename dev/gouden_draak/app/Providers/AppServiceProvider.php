@@ -21,5 +21,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Blade::component('layouts.checkout', 'checkout-layout');
+        Blade::component('layouts.home', 'home-layout');
     }
 }

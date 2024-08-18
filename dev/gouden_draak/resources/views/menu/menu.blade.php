@@ -1,4 +1,4 @@
-<x-homelayout>
-    <img class="object-cover" src="images/menu/restaurant-menukaart-1.jpg" alt="">
-    <img class="object-cover" src="images/menu/restaurant-menukaart-1-2.jpg" alt="">
-</x-homelayout>
+<x-home-layout>
+      <img class="object-cover" src="{{url('images/restaurant-menukaart-1-2.jpg')}}">
+      <img class="object-cover" src="{{url('images/restaurant-menukaart-1.jpg')}}">
+</x-home-layout>

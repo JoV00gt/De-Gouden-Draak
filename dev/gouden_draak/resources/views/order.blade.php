@@ -16,7 +16,7 @@
                            <td>{{$dish->addition}}{{$dish->item_number}}.</td>
                            <td>{{$dish->name}}<i>{{$dish->description}}</i></td>
                            <td>€ {{$dish->price}}</td>
-                           <td><x-primary-button @click="addToOrder({{ json_encode($dish) }})">Toevoegen</x-primary-button></td>
+                           <td><x-primary-button @click="addToOrder({{ json_encode($dish) }})">{{__('order-add-button')}}</x-primary-button></td>
                         </tr>
                      @endforeach
                      </tbody>
@@ -27,7 +27,7 @@
       <div class="mt-5 p-2.5 select-tab box-border">
          <div class="h-full">
             <div class="ordering-tab box-border p-5 overflow-y-scroll">
-               <div class="mt-0 order-header">Bestelling</div>
+               <div class="mt-0 order-header">{{__('order-title')}}</div>
                <table class="w-full item-selected-table">
                   <tr v-for="item in order" :key="item.id">
                      <td>@{{ item.addition }}@{{ item.item_number }}.</td>
@@ -40,18 +40,18 @@
             <div class="box-border px-4 py-6 total-tab w-full">
                <div class="flex justify-between total-table w-full">
                   <div>
-                     <span>Totaal: € <span class="totalAmount">@{{ totalAmount.toFixed(2).replace('.', ',') }}</span></span>
+                     <span>{{__('order-total')}}<span class="totalAmount">@{{ totalAmount.toFixed(2).replace('.', ',') }}</span></span>
                   </div>
                   <div>
                      <form id="pdfForm" action="{{ route('generatePDF') }}" method="POST">
                            @csrf
                            <input type="hidden" name="orderData" :value="orderData">
-                           <x-primary-button type="submit">PDF downloaden</x-primary-button>
+                           <x-primary-button type="submit">{{__('order-download-pdf')}}</x-primary-button>
                      </form>
                   </div>
                   <div>
-                     <button class="primary-button" @click="payOrder" id="payOrder">Afrekenen</button>
-                     <button class="secondary-button"  @click="clearOrder" id="clearOrder">Verwijderen</button>
+                     <button class="primary-button" @click="payOrder" id="payOrder">{{__('order-pay')}}</button>
+                     <button class="secondary-button"  @click="clearOrder" id="clearOrder">{{__('order-delete')}}</button>
                   </div>
                </div>
                <x-error-modal id="orderModal">

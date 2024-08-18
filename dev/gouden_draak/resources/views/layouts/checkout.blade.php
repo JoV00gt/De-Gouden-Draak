@@ -27,28 +27,28 @@
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex justify-between border-b-blue-600 border-b-[3px] p-2">
             <div>
-                <img class="h-20" src="{{url('images/goodpay.png')}}"/>
+                <img class="h-20" src="{{url('images/goodpay.png')}}" alt="{{__('images-goodpay')}}"/>
             </div>
             <div> 
                 <x-checkout-button>
                     <a href="{{ route('order') }}">
-                        {{ __('Kassa') }}
+                        {{ __('checkout-nav-checkout') }}
                     </a>
                 </x-checkout-button>
                 <x-checkout-button>
                     <a href="{{ route('menu.index') }}">
-                        {{ __('Gerechten') }}
+                        {{ __('checkout-nav-dishes') }}
                     </a>
                 </x-checkout-button>
                 <x-checkout-button>
                     <a href="{{ route('sales') }}">
-                        {{ __('Verkoop Overzicht') }}
+                        {{ __('checkout-nav-sales') }}
                     </a>
                 </x-checkout-button>    
                 <form method="POST" class="inline-block" action="{{ route('logout') }}">
                     @csrf
                     <x-checkout-button class="ml-12">
-                        {{ __('Log Uit') }}
+                        {{ __('checkout-nav-logout') }}
                     </x-checkout-button>
                 </form>
             </div>

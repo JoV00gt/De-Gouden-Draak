@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'Home'])->name('Home');
-Route::get('/contact', [ContactController::class, 'index'])->name('index');
-Route::get('/news', [NewsController::class, 'index'])->name('index');
-Route::get('/menu', [CustomerMenuController::class, 'index'])->name('index');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/customer/menu', [CustomerMenuController::class, 'index'])->name('customer.index');
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
@@ -43,5 +43,13 @@ Route::post('/order', [OrderingController::class, 'store'])->name('order.store')
 Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 'role:employee'])->name('order');
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'role:employee'])->name('sales.overview');
 Route::get('/sales', [SalesController::class, 'index'])->middleware(['auth', 'role:employee'])->name('sales');
+
+Route::get('set-locale/{locale}', function ($locale) {
+
+    session()->put('locale', $locale);
+    app()->setlocale($locale);
+
+    return redirect()->back();
+})->name('locale.setting');
 
 require __DIR__ . '/auth.php';
