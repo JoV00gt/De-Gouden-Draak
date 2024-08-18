@@ -16,6 +16,7 @@
         "vite": "^5.0.0"
     },
     "dependencies": {
+        "flag-icons": "^7.2.3",
         "laravel": "^0.0.1",
         "mix": "^0.0.1"
     }

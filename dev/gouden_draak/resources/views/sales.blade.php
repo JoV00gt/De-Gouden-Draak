@@ -9,16 +9,16 @@
                         @csrf
                         <div class="flex-col space-y-1">
                             <div class="flex justify-between">
-                                <label>Begin Datum:</label>
+                                <label>{{__('sales-begin-date')}}</label>
                                 <input class="date-input" type="date" value="{{ request('begindate') }}" name="begindate"></input>
                             </div>
                             <div class="flex justify-between">
-                                <label>Eind datum:</label>
+                                <label>{{__('sales-end-date')}}</label>
                                 <input class="date-input" type="date" value="{{ request('enddate') }}" name="enddate"></input>
                            </div>
                         </div>
                         <div>
-                            <button class="overview-button">Maak Overzicht</button>
+                            <button class="overview-button">{{__('sales-create-overview')}}</button>
                         </div>
                         @if($errors->any())
                             <x-error-modal id="salesModal">{{ $errors->first() }}</x-error-modal>
@@ -30,9 +30,9 @@
         <div class="total-sales-tab mt-5 p-2.5 border-box">
             <div class="total-info p-5 w-full h-full border-box">
                 <div class="flex flex-row justify-between w-full">
-                    <span>Omzet: </span><span>€ {{ number_format($total ?? 0, 2, ',', '.') }}</span>
-                    <span>BTW: </span><span>€ {{ number_format(($total ?? 0) - ($exVat ?? 0), 2, ',', '.') }}</span>
-                    <span>excl. BTW: </span><span>€ {{ number_format($exVat ?? 0, 2, ',', '.') }}</span>
+                    <span>{{__('sales-volume')}}</span><span>€ {{ number_format($total ?? 0, 2, ',', '.') }}</span>
+                    <span>{{__('sales-vat')}}</span><span>€ {{ number_format(($total ?? 0) - ($exVat ?? 0), 2, ',', '.') }}</span>
+                    <span>{{__('sales-excl-vat')}}</span><span>€ {{ number_format($exVat ?? 0, 2, ',', '.') }}</span>
                 </div>
             </div>
         </div>
@@ -44,19 +44,19 @@
                 <thead>
                     <tr>
                         <th>
-                            Datum
+                           {{__('sales-date')}}
                         </th>
                         <th>
-                            Gerecht
+                          {{__('name')}}
                         </th>
                         <th>
-                            Prijs
+                        {{__('price')}}
                         </th>
                         <th>
-                            Aantal
+                        {{__('sales-amount')}}
                         </th>
                         <th>
-                            Subtotaal
+                        {{__('sales-subtotal')}}
                         </th>
                     </tr>
                 </thead>

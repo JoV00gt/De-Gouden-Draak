@@ -24,7 +24,7 @@
             <tbody>
                 @foreach($items as $item)
                     <tr>
-                        <td>{{ $item['id'] }}.</td>
+                        <td>{{ $item['addition'] }}{{$item['item_number']}}.</td>
                         <td>{{ $item['name'] }}</td>
                         <td>€ {{ number_format($item['final_price'], 2, ',', '.') }}</td>
                         <td>{{ $item['quantity'] }}</td>

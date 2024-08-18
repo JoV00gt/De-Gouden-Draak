@@ -53,4 +53,12 @@ Route::get('/order', [OrderingController::class, 'index'])->middleware(['auth', 
 Route::get('/sales/overview', [SalesController::class, 'overview'])->middleware(['auth', 'role:employee'])->name('sales.overview');
 Route::get('/sales', [SalesController::class, 'index'])->middleware(['auth', 'role:employee'])->name('sales');
 
+Route::get('set-locale/{locale}', function ($locale) {
+
+    session()->put('locale', $locale);
+    app()->setlocale($locale);
+
+    return redirect()->back();
+})->name('locale.setting');
+
 require __DIR__ . '/auth.php';
