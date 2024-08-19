@@ -7,17 +7,17 @@
         @endif
         <div class="pt-4 flex justify-end">
             <x-primary-button>
-                <a href="{{ route('deals.create') }}">Aanbieding toevoegen</a> <!-- TODO: Translation -->
+                <a href="{{ route('deals.create') }}">{{__('deals-add')}}</a> 
             </x-primary-button>
         </div>
         <div class="pt-2">
    <table class="menu-table min-w-full divide-y divide-gray-200">
     <thead class="menu-table-header">
         <tr>
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Item</th>  <!-- TODO: Translation -->
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th> <!-- TODO: Translation -->
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">New Price</th> <!-- TODO: Translation -->
-            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Geldigheid</th> <!-- TODO: Translation -->
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('dishes-item')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('name')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('new-price')}}</th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('validity')}}</th>
             <th colspan="2" scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider"></th>
         </tr>
     </thead>
@@ -37,13 +37,13 @@
                         {{ date('d-m-Y', strtotime($deal->start_date)) }} - {{ date('d-m-Y', strtotime($deal->expire_date)) }}
                     </td>
                         <td>
-                            <a href="{{ route('deals.edit', $deal->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Aanpassen</a> <!-- TODO: Translation -->
+                            <a href="{{ route('deals.edit', $deal->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{{__('deals-edit')}}</a>
                         </td>
                         <td>
                             <form action="{{ route('deals.destroy', $deal->id)}}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <x-danger-button>Verwijderen</x-danger-button> <!-- TODO: Translation -->
+                                <x-danger-button>{{__('deals-delete')}}</x-danger-button>
                             </form>
                         </td>
                 </tr>

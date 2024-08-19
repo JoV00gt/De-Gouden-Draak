@@ -47,7 +47,7 @@
                 </x-checkout-button>
                 <x-checkout-button>
                     <a href="{{ route('deals.index') }}">
-                        {{ __('Aanbiedingen') }} <!-- TODO: translation -->
+                        {{ __('checkout-nav-deals') }} 
                     </a>
                 </x-checkout-button>        
                 <form method="POST" class="inline-block" action="{{ route('logout') }}">

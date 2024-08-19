@@ -58,7 +58,7 @@ class DealController extends Controller
             'expire_date' => $request->end_date
         ]);
 
-        return redirect()->route('deals.index')->with('success', 'Aanbieding is successvol toegevoegd'); //TODO: Translation
+        return redirect()->route('deals.index')->with('success', __('deals-success-add'));
     }
 
     public function edit($id): View
@@ -100,7 +100,7 @@ class DealController extends Controller
             'expire_date' => $request->end_date
         ]);
 
-        return redirect()->route('deals.index')->with('success', 'Aanbieding is succesvol aangepast'); //TODO: translation
+        return redirect()->route('deals.index')->with('success', __('deals-success-edit')); 
     }
 
     public function destroy($id): RedirectResponse 
@@ -108,7 +108,7 @@ class DealController extends Controller
         $deal = Deal::findorFail($id);
         $deal->delete();
 
-        return redirect()->route('deals.index')->with('success', 'Aanbieding is succesvol verwijderd'); //TODO: translation
+        return redirect()->route('deals.index')->with('success', __('deals-success-delete'));
     }
 
     public function deals(): View

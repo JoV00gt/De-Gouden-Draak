@@ -9,11 +9,11 @@
                         @csrf
                         <div class="flex-col space-y-1">
                             <div class="flex justify-between">
-                                <label>{{__('sales-begin-date')}}</label>
+                                <label for="begindate">{{__('begin-date')}}</label>
                                 <input class="date-input" type="date" value="{{ request('begindate') }}" name="begindate"></input>
                             </div>
                             <div class="flex justify-between">
-                                <label>{{__('sales-end-date')}}</label>
+                                <label for="enddate">{{__('end-date')}}</label>
                                 <input class="date-input" type="date" value="{{ request('enddate') }}" name="enddate"></input>
                            </div>
                         </div>
