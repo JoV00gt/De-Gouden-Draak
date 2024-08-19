@@ -5,6 +5,7 @@
     "nav-menu": "Menu",
     "nav-news": "News",
     "nav-contact": "Contact",
+    "nav-deals": "Deals",
     "contact-link": "Go to contact",
     "introduction": "De Gouden Draak has been a household name for years when it comes to the best takeaway dishes in 's-Hertogenbosch. We would like to treat you to authentic dishes from Cantonese cuisine.",
     "news": "Due to the Corona crisis, De Gouden Draak is currently only open to a limited extent. The restaurant area is closed. You can still pick up your favorite dishes.",
@@ -47,6 +48,16 @@
     "sales-date": "Date",
     "sales-amount": "Amount",
     "sales-subtotal": "Subtotal",
-    "images-goodpay": "This is a logo of Goodpay kassasystemen"
+    "images-goodpay": "This is a logo of Goodpay kassasystemen",
+    "deals-special-title": "Special deal",
+    "deals-title": "Deals:",
+    "deals": "Deals",
+    "valid": "Valid from",
+    "till": "till",
+    "price_before": "Price was:",
+    "price_after": "is now:",
+    "menu-text": "if you would like to view our menu, please download the PDF",
+    "download-menu": "Download menu"
+
 
 }

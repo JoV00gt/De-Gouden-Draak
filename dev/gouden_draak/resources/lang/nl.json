@@ -4,6 +4,7 @@
     "subtitle": "Chinees Indische Specialiteiten",
     "nav-menu": "Menukaart",
     "nav-news": "Nieuws",
+    "nav-deals": "Aanbiedingen",
     "nav-contact": "Contact",
     "contact-link": "Ga naar contactpagina",
     "introduction": "Al jaren is De Gouden Draak een begrip als het gaat om de beste afhaalgerechten in 's-Hertogenbosch. Graag trakteren we u op authentieke gerechten uit de Cantonese keuken.",
@@ -48,6 +49,16 @@
     "sales-name": "Naam",
     "sales-amount": "Aantal",
     "sales-subtotal": "Subtotaal",
-    "images-goodpay": "Dit is een logo van Goodpay kassasystemen"
+    "images-goodpay": "Dit is een logo van Goodpay kassasystemen",
+    "deals-special-title": "Speciale aanbieding",
+    "deals-title": "Aanbiedingen:",
+    "valid": "Geldig van",
+    "till": "tot",
+    "deals": "Aanbieding",
+    "price_before": "Prijs was:",
+    "price_after": "is nu:",
+    "menu-text": "Ons menu willen inzien download de PDF",
+    "download-menu": "Download menu"
+
 
 }

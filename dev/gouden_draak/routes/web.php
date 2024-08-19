@@ -23,10 +23,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('/contact', [ContactController::class, 'index'])->name('index');
-Route::get('/news', [NewsController::class, 'index'])->name('index');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/customer/menu', [CustomerMenuController::class, 'index'])->name('customer.index');
 Route::get('/menu/download', [PDFController::class, 'generateMenuPDF'])->name('menu.download');
+Route::get('deals', [DealController::class, 'deals'])->name('deals.deals');
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
@@ -36,7 +37,6 @@ Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('deals/{id}',  [DealController::class, 'edit'])->name('deals.edit');
     Route::put('deals/{id}',  [DealController::class, 'update'])->name('deals.update');
     Route::delete('deals/{id}',  [DealController::class, 'destroy'])->name('deals.destroy');
-    Route::get('deals', [DealController::class, 'deals'])->name('deals.deals');
 });
 
 Route::group(['middleware' => ['auth', 'role:admin']], function() {

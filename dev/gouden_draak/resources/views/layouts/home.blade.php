@@ -27,7 +27,7 @@
             </div>
             <div class="content-center flex">
                 <marquee behavior="scroll" direction="left" class="m-1 mr-2">
-                    <a class="font-sans text-sm font-bold" href="/">{{ __('checkout-deals') }}</a>
+                    <a class="font-sans text-sm font-bold" href="{{route('deals.deals')}}">{{ __('checkout-deals') }}</a>
                 </marquee>
                 <div class="flex">
                     <x-nav-link dusk="lang-gb" :href="route('locale.setting', 'en')"><span class="fi fi-gb"></span></x-nav-link>
@@ -50,6 +50,7 @@
                     <nav class="inline-flex flex-wrap border border-black text-sm text-white">
                         <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('customer.index')}}">{{__('nav-menu')}}</a>
                         <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('news')}}">{{__('nav-news')}}</a>
+                        <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('deals.deals')}}">{{__('nav-deals')}}</a>
                         <a class="m-1 pl-10 pr-10 pt-2 pb-2 shadow-sm bg-img bg-[#0000FF]" href="{{route('contact')}}">{{__('nav-contact')}}</a>
                     </nav>
                 </div>
