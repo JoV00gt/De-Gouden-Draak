@@ -1,7 +1,8 @@
 Vue.component('search-bar', {
+    props: ['text'],
     template: `
         <div>
-            <input v-model="query" @input="onInput" placeholder="Search..." class="p-2 border rounded" />
+            <input v-model="query" @input="onInput" :placeholder="text" class="p-2 border rounded" />
         </div>`,
     data() {
         return {
@@ -19,7 +20,7 @@ Vue.component('category-filter', {
     template: `
         <div>
         <select v-model="selectedCategory" @change="onCategoryChange" class="p-2 border rounded">
-            <option value="">All Categories</option>
+            <option value="">{{ text }}</option>
             <option v-for="category in categories" :key="category" :value="category">
                 {{ category }}
             </option>
@@ -30,6 +31,9 @@ Vue.component('category-filter', {
         categories: {
             type: Array,
             required: true
+        },
+        text: {
+            type: String
         }
     },
     data() {

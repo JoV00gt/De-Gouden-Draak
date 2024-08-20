@@ -29,6 +29,8 @@
     "dishes-item": "Item",
     "name": "Naam",
     "category": "Categorie",
+    "category-all": "Alle categorieën",
+    "search": "Zoek gerecht",
     "price": "Prijs",
     "dish": "Gerecht",
     "new-price": "Nieuwe prijs",

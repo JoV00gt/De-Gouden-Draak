@@ -29,6 +29,8 @@
     "dishes-item": "Item",
     "name": "Name",
     "category": "Category",
+    "category-all": "All categories",
+    "search": "Search dish",
     "price": "Price",
     "dish": "Dish",
     "new-price": "New price",
