@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CocktailController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CustomerMenuController;
@@ -28,6 +29,11 @@ Route::get('/news', [NewsController::class, 'index'])->name('news');
 Route::get('/customer/menu', [CustomerMenuController::class, 'index'])->name('customer.index');
 Route::get('/menu/download', [PDFController::class, 'generateMenuPDF'])->name('menu.download');
 Route::get('deals', [DealController::class, 'deals'])->name('deals.deals');
+Route::get('/cocktails', [CocktailController::class, 'index'])->name('cocktails');
+
+Route::middleware(['cors'])->group(function () {
+    Route::get('/cocktails', [CocktailController::class, 'index'])->name('cocktails');
+});
 
 Route::group(['middleware' => ['auth', 'role:employee']], function() {
     Route::get('menu', [MenuController::class, 'index'])->name('menu.index');
