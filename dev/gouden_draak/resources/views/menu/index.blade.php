@@ -7,7 +7,7 @@
         @endif
         <div class="pt-4 flex justify-between">
             <div class="flex space-x-8">
-                <search-bar :text="'{{__('search')}}'" @search="updateSearchQuery"></search-bar>
+            <search-bar :text="'{{__('search')}}'" @search="updateSearchQuery"></search-bar>
                 <category-filter :categories="categories" :text="'{{ __('category-all') }}'" @category-selected="updateCategory"></category-filter>
             </div>
             @role('admin')

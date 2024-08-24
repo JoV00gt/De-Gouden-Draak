@@ -49,11 +49,11 @@ Vue.component('category-filter', {
 });
 
 new Vue({
-    el: '#cocktails',
+    el: '#menuroot',
     data: {
         searchQuery: '',
         selectedCategory: '',
-        cocktails: window.items,
+        items: window.items,
         categories: []
      },
  
@@ -61,9 +61,10 @@ new Vue({
         filteredItems() {
             const searchTerm = this.searchQuery.toLowerCase();
 
-            return this.cocktails.filter(item => {
+            return this.items.filter(item => {
                 const matchesSearch = searchTerm
-                    ? item.strDrink.toLowerCase().includes(searchTerm)
+                    ? item.name.toLowerCase().includes(searchTerm) ||
+                      (item.addition + item.item_number).toLowerCase().includes(searchTerm)
                     : true;
 
                 const matchesCategory = this.selectedCategory
@@ -91,11 +92,4 @@ new Vue({
             return numericPrice.toFixed(2).replace('.', ',');
         }
      },
-     mounted() {
-        const set= new Set();
-        this.cocktails.forEach(item => {
-            set.add(item.strCategory);
-        });
-        this.categories = Array.from(set);
-    }
 });
