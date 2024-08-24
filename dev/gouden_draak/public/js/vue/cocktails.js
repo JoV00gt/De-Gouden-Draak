@@ -67,7 +67,7 @@ new Vue({
                     : true;
 
                 const matchesCategory = this.selectedCategory
-                    ? item.dish === this.selectedCategory
+                    ? item.strCategory === this.selectedCategory
                     : true;
 
                 return matchesSearch && matchesCategory;
