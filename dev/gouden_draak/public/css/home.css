@@ -1,0 +1,7 @@
+.bg-background-borders {
+    width: 100%; /* Full width */
+    padding: 20px; /* Space inside the border */
+    border: 60px solid transparent; /* Set the border to be transparent */
+    border-image: url("../images/restaurantkader.png") 60 round; /* Path to the border image, slice width, repeat style */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  }
