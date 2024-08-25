@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RolePermissionSeeder::class);
         $this->call(DishTypeSeeder::class);
         $this->call(DishSeeder::class);
+        $this->call(DealSeeder::class);
 
         User::factory(2)->state(function (array $attributes) {
             $name = $attributes['name'];
