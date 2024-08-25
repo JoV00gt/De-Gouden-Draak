@@ -75,5 +75,6 @@
     "deals-delete": "Delete deal",
     "deals-add-title": "Create a new deal",
     "deals-edit-title": "Edit this deal",
-    "no-results": "No results found"
+    "no-results": "No results found",
+    "summary-title": "Sales summaries"
 }

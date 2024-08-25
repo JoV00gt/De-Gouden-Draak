@@ -51,6 +51,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('menu/{id}',  [MenuController::class, 'edit'])->name('menu.edit');
     Route::put('menu/{id}',  [MenuController::class, 'update'])->name('menu.update');
     Route::delete('menu/{id}',  [MenuController::class, 'destroy'])->name('menu.destroy');
+    Route::get('/summaries', [SalesSummaryController::class, 'index'])->name('summaries.index');
 });
 
 Route::post('generate-bill', [PDFController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('generatePDF');

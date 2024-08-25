@@ -76,5 +76,6 @@
     "deals-delete": "Aanbieding verwijderen",
     "deals-add-title": "Maak een nieuwe aanbieding aan",
     "deals-edit-title": "Wijzig huidige aanbieding",
-    "no-results": "Geen resultaten gevonden"
+    "no-results": "Geen resultaten gevonden",
+    "summary-title": "Verkoop samenvatting"
 }
