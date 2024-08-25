@@ -63,7 +63,7 @@
             </tbody>
     </table>
     <div v-else class="flex h-full items-center justify-center text-4xl w-full">
-        <p>No results found</p>
+        <p>{{__('no-results')}}</p>
     </div>
    </div>
     </div>

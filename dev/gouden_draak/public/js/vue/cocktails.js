@@ -19,7 +19,7 @@ Vue.component('cocktail-search', {
 Vue.component('category-filter', {
     template: `
         <div>
-        <select v-model="selectedCategory" @change="onCategoryChange" class="p-2 border rounded">
+        <select v-model="selectedCategory" @change="onCategoryChange" class="border rounded w-full">
             <option value="">{{ text }}</option>
             <option v-for="category in categories" :key="category" :value="category">
                 {{ category }}
@@ -86,10 +86,6 @@ new Vue({
         updateCategory(category) {
             this.selectedCategory = category;
         },
-         formatPrice(price) {
-            const numericPrice = parseFloat(price);
-            return numericPrice.toFixed(2).replace('.', ',');
-        }
      },
      mounted() {
         const set= new Set();

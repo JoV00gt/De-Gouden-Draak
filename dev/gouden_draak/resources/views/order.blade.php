@@ -31,7 +31,7 @@
                <table class="w-full item-selected-table">
                   <tr v-for="item in order" :key="item.id">
                      <td>@{{ item.addition }}@{{ item.item_number }}.</td>
-                     <td>@{{ item.name }}<i>@{{item.description}}</i></td>
+                     <td>@{{ item.name }} <i>@{{item.description}}</i></td>
                      <td>€ @{{ (item.final_price * item.quantity).toFixed(2).replace('.', ',') }}</td>
                      <td><input class="w-full" type="number" min="1" v-model="item.quantity"></td>
                   </tr>

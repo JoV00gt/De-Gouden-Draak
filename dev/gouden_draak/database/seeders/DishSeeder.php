@@ -31,9 +31,9 @@ class DishSeeder extends Seeder
         Dish::create(['item_number' => 9, 'addition' => 'B','name' => 'Pangsit Goreng', 'description' => '7 st.', 'price' => 3.90, 'dish' => 'Voorgerecht']);
         Dish::create(['item_number' => 10, 'addition' => 'B','name' => 'Pisang Goreng', 'description' => '5 st.', 'price' => 3.40, 'dish' => 'Voorgerecht']);
         Dish::create(['item_number' => 11, 'addition' => 'B','name' => 'Chinese Dim Sum', 'description' => 'mini loempia, kerry ko, pangsit goreng, garnalenpasteitje', 'price' => 5.40, 'dish' => 'Voorgerecht']);
-        Dish::create(['item_number' => 12, 'addition' => 'B','name' => 'Sat&eacute; Babi', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
-        Dish::create(['item_number' => 13, 'addition' => 'B','name' => 'Sat&eacute; Ajam', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
-        Dish::create(['item_number' => 14, 'addition' => 'B','name' => 'Sat&eacute; Garnalen', 'description' => '3 st.', 'price' => 9.90, 'dish' => 'Voorgerecht']);
+        Dish::create(['item_number' => 12, 'addition' => 'B','name' => 'Saté Babi', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
+        Dish::create(['item_number' => 13, 'addition' => 'B','name' => 'Saté Ajam', 'description' => '4 st.', 'price' => 5.40, 'dish' => 'Voorgerecht']);
+        Dish::create(['item_number' => 14, 'addition' => 'B','name' => 'Saté Garnalen', 'description' => '3 st.', 'price' => 9.90, 'dish' => 'Voorgerecht']);
         Dish::create(['item_number' => 15, 'addition' => 'B','name' => 'Fong Mei Ha', 'description' => 'krokant gepaneerd garnalen. 4 st.', 'price' => 8.10, 'dish' => 'Voorgerecht']);
         Dish::create(['item_number' => 16, 'addition' => 'B','name' => 'Patat', 'description' => null, 'price' => 2.30, 'dish' => 'Voorgerecht']);
         Dish::create(['item_number' => 17, 'addition' => 'B','name' => 'Tsa Siu Mai', 'description' => 'gebakken vleespasteitje. 4 st.', 'price' => 3.50, 'dish' => 'Voorgerecht']);

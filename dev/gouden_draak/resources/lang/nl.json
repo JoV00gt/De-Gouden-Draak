@@ -5,6 +5,7 @@
     "nav-menu": "Menukaart",
     "nav-news": "Nieuws",
     "nav-deals": "Aanbiedingen",
+    "nav-cocktails": "Cocktails",
     "nav-contact": "Contact",
     "contact-link": "Ga naar contactpagina",
     "introduction": "Al jaren is De Gouden Draak een begrip als het gaat om de beste afhaalgerechten in 's-Hertogenbosch. Graag trakteren we u op authentieke gerechten uit de Cantonese keuken.",
@@ -30,8 +31,9 @@
     "name": "Naam",
     "category": "Categorie",
     "category-all": "Alle categorieën",
-    "search": "Zoek gerecht",
+    "search": "Zoeken",
     "price": "Prijs",
+    "ingredient": "3 belangrijke ingrediënten: ",
     "dish": "Gerecht",
     "new-price": "Nieuwe prijs",
     "validity": "Geldigheid",
@@ -73,5 +75,6 @@
     "deals-add": "Aanbieding toevoegen",
     "deals-delete": "Aanbieding verwijderen",
     "deals-add-title": "Maak een nieuwe aanbieding aan",
-    "deals-edit-title": "Wijzig huidige aanbieding"
+    "deals-edit-title": "Wijzig huidige aanbieding",
+    "no-results": "Geen resultaten gevonden"
 }
