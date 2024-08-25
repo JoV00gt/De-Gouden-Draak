@@ -1,7 +1,12 @@
 <?php
 
+use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Console\Scheduling\Schedule;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +19,23 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+use Illuminate\Support\Facades\DB;
+
+$schedule = new Schedule;
+$schedule->call(function () {
+    //total amount of sales
+    $orders = Order::where('date','>', Carbon::now()->subDay());
+    $total_sales = 0;
+    foreach($orders as $order) {
+        foreach($order->items as $item) {
+            $total_sales += $item->price;
+        }
+    }
+    DB::table('salesreport')->insert([
+        'date' => now(),
+        'total_sales' => $total_sales,
+        'total_sales_excl_btw' => $total_sales * 0.79,
+        'total_btw' => $total_sales * 0.21,
+        'total_profit' => $total_sales,
+    ]);
+})->dailyAt("23:59")->purpose("Generate sales report daily at 23:59");

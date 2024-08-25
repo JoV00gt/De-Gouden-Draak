@@ -17,7 +17,5 @@ class SalesReport extends Model
         'total_sales_excl_btw',
         'total_btw',
         'total_profit',
-        'final_price',
-        'price',
     ];
 }
