@@ -9,6 +9,7 @@ use App\Http\Controllers\OrderingController;
 use App\Http\Controllers\SalesController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SalesReportController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,7 @@ Route::group(['middleware' => ['auth', 'role:admin']], function() {
     Route::get('menu/{id}',  [MenuController::class, 'edit'])->name('menu.edit');
     Route::put('menu/{id}',  [MenuController::class, 'update'])->name('menu.update');
     Route::delete('menu/{id}',  [MenuController::class, 'destroy'])->name('menu.destroy');
+    Route::get('salesreport', [SalesReportController::class, 'index'])->name('salesreport.index');
 });
 
 Route::post('generate-bill', [PDFController::class, 'generatePDF'])->middleware(['auth', 'verified'])->name('generatePDF');
