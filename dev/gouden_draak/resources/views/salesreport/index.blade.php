@@ -7,7 +7,7 @@
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('turnover')}}</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('turnover excl btw')}}</th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('btw')}}</th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('profit')}}</th>
+                    <th scope="col" colspan="3" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">{{__('profit')}}</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -16,10 +16,10 @@
                         @{{ item.date }}
                     </td>
                     <td class="max-w-lg px-6 py-4 text-sm text-gray-500">
-                    € @{{ item.total_sales }}
+                        € @{{ item.total_sales }}
                     </td>
                     <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    € @{{ item.total_sales_excl_btw }}
+                        € @{{ item.total_sales_excl_btw }}
                     </td>
                     <td class="max-w-xs px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         € @{{ item.total_btw }}
@@ -36,6 +36,8 @@
             </tbody>
         </table>
     </div>
-    <script> window.items = @json($reports) </script>
+    <script>
+        window.items = @json($reports)
+    </script>
     <script src="{{ asset('js/vue/salesreport.js') }}" defer></script>
 </x-checkout-layout>

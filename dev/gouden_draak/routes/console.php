@@ -24,10 +24,10 @@ use Illuminate\Support\Facades\DB;
 $schedule = new Schedule;
 $schedule->call(function () {
     //total amount of sales
-    $orders = Order::where('date','>', Carbon::now()->subDay());
+    $orders = Order::where('date', '>', Carbon::now()->subDay());
     $total_sales = 0;
-    foreach($orders as $order) {
-        foreach($order->items as $item) {
+    foreach ($orders as $order) {
+        foreach ($order->items as $item) {
             $total_sales += $item->price;
         }
     }
@@ -38,4 +38,4 @@ $schedule->call(function () {
         'total_btw' => $total_sales * 0.21,
         'total_profit' => $total_sales,
     ]);
-})->dailyAt("23:59")->purpose("Generate sales report daily at 23:59");
+})->everyMinute();

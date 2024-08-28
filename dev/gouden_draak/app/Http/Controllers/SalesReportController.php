@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\SalesReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
@@ -16,7 +17,7 @@ class SalesReportController extends Controller
         return view('salesreport.index')->with('reports', SalesReport::all());
     }
 
-    public function createSalesExcel($id) 
+    public function createSalesExcel($id)
     {
         //total
         $spreadsheet = new Spreadsheet();
@@ -35,21 +36,35 @@ class SalesReportController extends Controller
         $sheet->setCellValue('E' . $row, $report->total_profit);
 
         //orders
-        $row+=1;
+        $row += 1;
         $sheet->setCellValue('A' . $row, "Orders");
-        $orders = Order::where('date','>', Carbon::now()->subDay());
-        $row+=1;
-        foreach($orders as $order) {
-            $sheet->setCellValue('A' . $row, $order->date);
-            $row+=1;
-            foreach($order->items as $item) {
-                $sheet->setCellValue('A' . $row, $item->name);
-                $row+=1;
-            }
+        $orders = Order::where('date', '>', Carbon::now()->subDay());
+        $row += 1;
+
+        $orderIds = Order::whereBetween('date', [Carbon::today()->subDay(), Carbon::today()])->pluck('id');
+        $items = OrderItem::whereIn('order_id', $orderIds)->with(['order', 'dish'])->get();
+
+        //make headers for orders
+        $sheet->setCellValue('A' . $row, 'Date');
+        $sheet->setCellValue('B' . $row, 'Dish');
+        $sheet->setCellValue('C' . $row, 'Amount');
+        $sheet->setCellValue('D' . $row, 'Price');
+        $sheet->setCellValue('E' . $row, 'Total Price');
+        $row += 1;
+        foreach ($items as $item) {
+            $sheet->setCellValue('A' . $row, $item->order->date);
+            $sheet->setCellValue('B' . $row, $item->dish->name);
+            $sheet->setCellValue('C' . $row, $item->amount);
+            $sheet->setCellValue('D' . $row, $item->dish->getFinalPriceAttribute($item->order->date));
+            $sheet->setCellValue('E' . $row, $item->dish->getFinalPriceAttribute($item->order->date) * $item->amount);
+            $row += 1;
+        }
+
+        foreach ($sheet->getColumnIterator() as $column) {
+            $sheet->getColumnDimension($column->getColumnIndex())->setAutoSize(true);
         }
         $writer = new Xlsx($spreadsheet);
         $writer->save('salesreport.xlsx');
         return response()->download('salesreport.xlsx');
     }
-
 }
